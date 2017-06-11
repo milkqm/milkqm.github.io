@@ -18,18 +18,18 @@ baseurl: ""
 title: Phuong Nguyen
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Welcome to my personal site!
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: "http://phuong.xyz/blog"
-  Projects: "http://phuong.xyz/projects"
-  Resources:
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  About me / Contact : "http://phuong.xyz/contact"
+  Blog: "blog"
+  Projects: "projects"
+  #Resources:
+  #  - Learn markdown: "http://www.markdowntutorial.com/"
+  #  - GitHub Pages: "https://pages.github.com/"
+  About me / Contact : "aboutme"
 
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -49,16 +49,16 @@ author:
   email: "phuongnm.dev@gmail.com"
   facebook: phuongnm.it  # eg. daattali
   github: phuongmn    # eg. daattali
-  twitter: phuongnm   # eg. daattali
-  reddit: phuongnm    # eg. daattali
-  google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
+  #twitter: phuongnm   # eg. daattali
+  #reddit: phuongnm    # eg. daattali
+  google-plus: +Phuong Nguyen   # eg. +DeanAttali or 109424658772469020925
   linkedin: phuongnm  # eg. daattali
-  xing: yourname      # eg. daattali
-  stackoverflow: yourlink  # eg. "3943160/daattali"
-  snapchat: phuongnm  # eg. daattali
-  instagram: phuongnm # eg. daattali
-  youtube: phuongnm   # eg. user/daattali or channel/daattali
-  spotify: phuongnm   # eg. daattali
+  #xing: yourname      # eg. daattali
+  #stackoverflow: yourlink  # eg. "3943160/daattali"
+  #snapchat: phuongnm  # eg. daattali
+  #instagram: phuongnm # eg. daattali
+  #youtube: phuongnm   # eg. user/daattali or channel/daattali
+  #spotify: phuongnm   # eg. daattali
   telephone: +84906492560   # eg. +14159998888
 
 # Select which links to show in the footer
@@ -114,10 +114,11 @@ title-separator: "-"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: "Vietnam/Hochiminh"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+paginate_path: blog/page:num
+permalink: /blog/:year-:month-:day-:title/
 paginate: 5
 
 kramdown:
