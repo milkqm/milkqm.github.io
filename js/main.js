@@ -1,138 +1,310 @@
-// Dean Attali / Beautiful Jekyll 2016
+$(document).ready(function() {
+    "use strict";
 
-var main = {
+    $(window).on("scroll", function() {
+        var stickyHeader = $(window).scrollTop() >= 80;
+        $(".header-area").toggleClass("header-fixed", stickyHeader);
+    });
+    $("select").niceSelect();
 
-  bigImgEl : null,
-  numImgs : null,
+    /*----------------------------------------------------*/
+    /*  Magnific Pop up js (Home Video)
+    /*----------------------------------------------------*/
+    $("#play-video").magnificPopup({
+        type: "iframe",
+        mainClass: "mfp-fade",
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+    });
 
-  init : function() {
-    // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-        } else {
-            $(".navbar").removeClass("top-nav-short");
+    $(".img-pop-up").magnificPopup({
+        type: "image",
+        gallery: {
+            enabled: true
         }
     });
-    
-    // On mobile, hide the avatar when expanding the navbar menu
-    $('#main-navbar').on('show.bs.collapse', function () {
-      $(".navbar").addClass("top-nav-expanded");
-    });
-    $('#main-navbar').on('hidden.bs.collapse', function () {
-      $(".navbar").removeClass("top-nav-expanded");
-    });
-	
-    // On mobile, when clicking on a multi-level navbar menu, show the child links
-    $('#main-navbar').on("click", ".navlinks-parent", function(e) {
-      var target = e.target;
-      $.each($(".navlinks-parent"), function(key, value) {
-        if (value == target) {
-          $(value).parent().toggleClass("show-children");
-        } else {
-          $(value).parent().removeClass("show-children");
-        }
-      });
-    });
-    
-    // Ensure nested navbar menus are not longer than the menu header
-    var menus = $(".navlinks-container");
-    if (menus.length > 0) {
-      var navbar = $("#main-navbar ul");
-      var fakeMenuHtml = "<li class='fake-menu' style='display:none;'><a></a></li>";
-      navbar.append(fakeMenuHtml);
-      var fakeMenu = $(".fake-menu");
 
-      $.each(menus, function(i) {
-        var parent = $(menus[i]).find(".navlinks-parent");
-        var children = $(menus[i]).find(".navlinks-children a");
-        var words = [];
-        $.each(children, function(idx, el) { words = words.concat($(el).text().trim().split(/\s+/)); });
-        var maxwidth = 0;
-        $.each(words, function(id, word) {
-          fakeMenu.html("<a>" + word + "</a>");
-          var width =  fakeMenu.width();
-          if (width > maxwidth) {
-            maxwidth = width;
-          }
+    // -------   Owl Carousel -----//0
+    (function home_banner_slider() {
+        if ($(".home-banner-owl").length) {
+            $(".home-banner-owl").owlCarousel({
+                loop: true,
+                margin: 10,
+                items: 1,
+                nav: true,
+                autoplay: 2500,
+                smartSpeed: 1500,
+                dots: true,
+                responsiveClass: true,
+                stagePadding: 140,
+                navText: [
+                    "<img src='img/prev.png' alt='' />",
+                    "<img src='img/next.png' alt='' />"
+                ],
+                responsive: {
+                    0: {
+                        margin: 0,
+                        stagePadding: 0
+                    },
+                    1299: {
+                        margin: 10,
+                        stagePadding: 140
+                    }
+                }
+            });
+        }
+    })();
+
+    (function loadCategoriesFlexSlider(){
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: true,
+            directionNav: false,
         });
-        $(menus[i]).css('min-width', maxwidth + 'px')
-      });
+    })();
 
-      fakeMenu.remove();
-    }        
-    
-    // show the big header image	
-    main.initImgs();
-  },
-  
-  initImgs : function() {
-    // If the page was large images to randomly select from, choose an image
-    if ($("#header-big-imgs").length > 0) {
-      main.bigImgEl = $("#header-big-imgs");
-      main.numImgs = main.bigImgEl.attr("data-num-img");
+    // Select all links with hashes
+    // Remove links that don't actually link to anything
+    var $links = $('a[href*="#"]').not('[href="#"]').not('[href="#0"]');
+    $links.click(function(event) {
+        // On-page links
+        var onPageLink = (
+            location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+        )
+        if (onPageLink) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ?
+                target :
+                $("[name=" + this.hash.slice(1) + "]");
+            // Does a scroll target exist?
+            if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $("html, body").animate({
+                        scrollTop: target.offset().top - 60
+                    },
+                    1000,
+                    function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) {
+                            // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        }
+                    }
+                );
+            }
+        }
+    });
 
-          // 2fc73a3a967e97599c9763d05e564189
-	  // set an initial image
-	  var imgInfo = main.getImgInfo();
-	  var src = imgInfo.src;
-	  var desc = imgInfo.desc;
-  	  main.setImg(src, desc);
-  	
-	  // For better UX, prefetch the next image so that it will already be loaded when we want to show it
-  	  var getNextImg = function() {
-	    var imgInfo = main.getImgInfo();
-	    var src = imgInfo.src;
-	    var desc = imgInfo.desc;		  
-	    
-		var prefetchImg = new Image();
-  		prefetchImg.src = src;
-		// if I want to do something once the image is ready: `prefetchImg.onload = function(){}`
-		
-  		setTimeout(function(){
-                  var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + src + ')');
-  		  $(".intro-header.big-img").prepend(img);
-  		  setTimeout(function(){ img.css("opacity", "1"); }, 50);
-		  
-		  // after the animation of fading in the new image is done, prefetch the next one
-  		  //img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-		  setTimeout(function() {
-		    main.setImg(src, desc);
-			img.remove();
-  			getNextImg();
-		  }, 1000); 
-  		  //});		
-  		}, 6000);
-  	  };
-	  
-	  // If there are multiple images, cycle through them
-	  if (main.numImgs > 1) {
-  	    getNextImg();
-	  }
+    // Google Map
+    if (document.getElementById("contactMap")) {
+        google.maps.event.addDomListener(window, "load", init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 11,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.67, -73.94), // New York
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [{
+                        featureType: "water",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#e9e9e9"
+                        }, {
+                            lightness: 17
+                        }]
+                    },
+                    {
+                        featureType: "landscape",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#f5f5f5"
+                        }, {
+                            lightness: 20
+                        }]
+                    },
+                    {
+                        featureType: "road.highway",
+                        elementType: "geometry.fill",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
+                            lightness: 17
+                        }]
+                    },
+                    {
+                        featureType: "road.highway",
+                        elementType: "geometry.stroke",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
+                            lightness: 29
+                        }, {
+                            weight: 0.2
+                        }]
+                    },
+                    {
+                        featureType: "road.arterial",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
+                            lightness: 18
+                        }]
+                    },
+                    {
+                        featureType: "road.local",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#ffffff"
+                        }, {
+                            lightness: 16
+                        }]
+                    },
+                    {
+                        featureType: "poi",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#f5f5f5"
+                        }, {
+                            lightness: 21
+                        }]
+                    },
+                    {
+                        featureType: "poi.park",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#dedede"
+                        }, {
+                            lightness: 21
+                        }]
+                    },
+                    {
+                        elementType: "labels.text.stroke",
+                        stylers: [{
+                                visibility: "on"
+                            },
+                            {
+                                color: "#ffffff"
+                            },
+                            {
+                                lightness: 16
+                            }
+                        ]
+                    },
+                    {
+                        elementType: "labels.text.fill",
+                        stylers: [{
+                                saturation: 36
+                            },
+                            {
+                                color: "#333333"
+                            },
+                            {
+                                lightness: 40
+                            }
+                        ]
+                    },
+                    {
+                        elementType: "labels.icon",
+                        stylers: [{
+                            visibility: "off"
+                        }]
+                    },
+                    {
+                        featureType: "transit",
+                        elementType: "geometry",
+                        stylers: [{
+                            color: "#f2f2f2"
+                        }, {
+                            lightness: 19
+                        }]
+                    },
+                    {
+                        featureType: "administrative",
+                        elementType: "geometry.fill",
+                        stylers: [{
+                            color: "#fefefe"
+                        }, {
+                            lightness: 20
+                        }]
+                    },
+                    {
+                        featureType: "administrative",
+                        elementType: "geometry.stroke",
+                        stylers: [{
+                            color: "#fefefe"
+                        }, {
+                            lightness: 17
+                        }, {
+                            weight: 1.2
+                        }]
+                    }
+                ]
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById("contactMap");
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            new google.maps.Marker({
+                position: new google.maps.LatLng(40.67, -73.94),
+                map: map,
+                title: "Snazzy!"
+            });
+        }
     }
-  },
-  
-  getImgInfo : function() {
-  	var randNum = Math.floor((Math.random() * main.numImgs) + 1);
-    var src = main.bigImgEl.attr("data-img-src-" + randNum);
-	var desc = main.bigImgEl.attr("data-img-desc-" + randNum);
-	
-	return {
-	  src : src,
-	  desc : desc
-	}
-  },
-  
-  setImg : function(src, desc) {
-	$(".intro-header.big-img").css("background-image", 'url(' + src + ')');
-	if (typeof desc !== typeof undefined && desc !== false) {
-	  $(".img-desc").text(desc).show();
-	} else {
-	  $(".img-desc").hide();  
-	}
-  }
-};
 
-// 2fc73a3a967e97599c9763d05e564189
+    $("#mc_embed_signup").find("form").ajaxChimp();
 
-document.addEventListener('DOMContentLoaded', main.init);
+    // -------   Mail Send ajax
+    $(document).ready(function() {
+        var form = $("#myForm"); // contact form
+        var submit = $(".submit-btn"); // submit button
+        var alert = $(".alert-msg"); // alert div for show alert message
+
+        // form submit event
+        form.on("submit", function(e) {
+            e.preventDefault(); // prevent default form submit
+
+            $.ajax({
+                url: "mail.php", // form action url
+                type: "POST", // form submit method get/post
+                dataType: "html", // request type html/json/xml
+                data: form.serialize(), // serialize form data
+                beforeSend: function() {
+                    alert.fadeOut();
+                    submit.html("Sending...."); // change submit button text
+                },
+                success: function(data) {
+                    alert.html(data).fadeIn(); // fade in response data
+                    form.trigger("reset"); // reset form
+                    submit.attr("style", "display: none !important"); // reset submit button text
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        });
+    });
+});
