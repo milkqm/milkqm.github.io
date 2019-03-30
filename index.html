@@ -1,21 +1,88 @@
----
-layout: page
-title: Hi, I'm Phuong
-subtitle: This is where I will tell my friends way too much about me
-use-site-title: true
----
-<div class="index-infinite">
-    <canvas id="scene"></canvas>
-</div>
-<style>
-    .index-infinite{
-        position: fixed;
-        top: 50px;
-        left: 0;
-    }
-    p.copyright.text-muted,
-    p.copyright.text-muted a{
-        color: #fff !important;
-        font-weight: 600;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <div partial-include="partials/_head.html"></div>
+
+    <body>
+        <div partial-include="partials/_head_menu.html"></div>
+        <div partial-include="partials/_banner_slider.html"></div>
+
+        <!--================ Start Blog Post Area =================-->
+        <section class="blog-post-area section-gap relative">
+            <div class="container">
+                <div class="row section-bottom-border">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                                <h3 class="text-heading">Highlights Videos</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="heading-searchbar">
+                                    <form class="search-form" action="#">
+                                        <input placeholder="Search Videos" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div partial-include="partials/_box_item.html"></div>
+                            <div partial-include="partials/_box_item.html"></div>
+                            <div partial-include="partials/_box_item.html"></div>
+                        </div>
+                        <div class="row">
+                            <div partial-include="partials/_box_item.html"></div>
+                            <div partial-include="partials/_box_item.html"></div>
+                            <div partial-include="partials/_box_item.html"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <nav class="blog-pagination justify-content-center d-flex">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a href="#" class="page-link" aria-label="Previous">
+                                                <span aria-hidden="true">
+                                                    <span class="ti-arrow-left"></span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a href="#" class="page-link">01</a></li>
+                                        <li class="page-item active"><a href="#" class="page-link">02</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">03</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">04</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">09</a></li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link" aria-label="Next">
+                                                <span aria-hidden="true">
+                                                    <span class="ti-arrow-right"></span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row section-top-border">
+                    <div class="col-lg-12">
+                        <h3 class="text-heading">Categories</h3>
+                    </div>
+                    <div class="col-lg-12">
+                        <div partial-include="partials/_categories.html"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ End Blog Post Area =================-->
+
+        <div partial-include="partials/_footer.html"></div>
+
+        <!-- JS for include template partials in HTML -->
+        <script type="text/javascript" src="js/_partials_includer.js"></script>
+
+        <link href="partials/_js_assets.html" rel="import" />
+    </body>
+</html>
