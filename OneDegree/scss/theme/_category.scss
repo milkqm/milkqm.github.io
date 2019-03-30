@@ -1,0 +1,359 @@
+.grid-container {
+    position: relative;
+    overflow: hidden
+}
+body:not(.device-touch) .grid-container {
+    -webkit-transition: height .4s ease;
+    -o-transition: height .4s ease;
+    transition: height .4s ease
+}
+.portfolio {
+    position: relative;
+    margin: 0 -12px -12px 0
+}
+
+body:not(.device-touch) .portfolio {
+    -webkit-transition: height .4s linear;
+    -o-transition: height .4s linear;
+    transition: height .4s linear
+}
+
+.portfolio-item {
+    float: left;
+    position: relative;
+    height: auto;
+    padding: 0 12px 12px 0
+}
+
+.portfolio-notitle .iportfolio,.portfolio-notitle .portfolio-item {
+    overflow: hidden
+}
+
+.portfolio-item .portfolio-image {
+    position: relative;
+    overflow: hidden
+}
+
+.portfolio-item .portfolio-image,.portfolio-item .portfolio-image a,.portfolio-item .portfolio-image img {
+    display: block;
+    width: 100%;
+    height: auto
+}
+
+body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .portfolio-image img {
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out
+}
+
+.portfolio-desc {
+    z-index: 3;
+    padding: 15px 5px 10px
+}
+
+.portfolio-desc h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 19px
+}
+
+.portfolio-desc h3 a {
+    color: #222
+}
+
+.portfolio-desc h3 a:hover {
+    color: #1abc9c
+}
+
+.portfolio-desc span {
+    display: block;
+    margin-top: 3px;
+    color: #888
+}
+
+.portfolio-desc span a {
+    color: #888
+}
+
+.portfolio-desc span a:hover {
+    color: #000
+}
+
+.portfolio-notitle .portfolio-desc {
+    position: absolute;
+    display: block!important;
+    width: 100%;
+    height: 78px;
+    padding: 15px 5px;
+    top: auto;
+    bottom: -79px;
+    left: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eee
+}
+
+body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .portfolio-desc {
+    -webkit-transition: bottom .2s ease-in-out;
+    -o-transition: bottom .2s ease-in-out;
+    transition: bottom .2s ease-in-out
+}
+
+.portfolio-full.portfolio-notitle .portfolio-desc,.portfolio-nomargin.portfolio-notitle .portfolio-desc {
+    bottom: -78px;
+    border-bottom: 0
+}
+
+.portfolio-notitle .iportfolio:hover .portfolio-desc,.portfolio-notitle .portfolio-item:hover .portfolio-desc {
+    bottom: 0!important
+}
+
+.bothsidebar .portfolio-notitle .portfolio-item:hover .portfolio-image img {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0)
+}
+
+body:not(.device-touch):not(.device-sm):not(.device-xs) .bothsidebar .portfolio-2.portfolio-notitle .portfolio-item:hover .portfolio-image img,body:not(.device-touch):not(.device-sm):not(.device-xs) .bothsidebar .portfolio-3.portfolio-notitle .portfolio-item:hover .portfolio-image img,body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .iportfolio:hover .portfolio-image img,body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-notitle .portfolio-item:hover .portfolio-image img {
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transform: translateY(-20px)
+}
+
+body.device-touch.device-sm .portfolio-notitle .portfolio-desc,body.device-touch.device-xs .portfolio-notitle .portfolio-desc {
+    display: none!important
+}
+
+.portfolio.portfolio-full,.portfolio.portfolio-nomargin {
+    margin: 0!important
+}
+
+.portfolio-full .portfolio-item,.portfolio-nomargin .portfolio-item {
+    padding: 0!important
+}
+
+.portfolio-nomargin .portfolio-desc {
+    padding: 15px 10px
+}
+
+.portfolio.portfolio-full {
+    margin: 0!important;
+    width: 100%
+}
+
+.portfolio-full .portfolio-item {
+    overflow: hidden!important
+}
+
+.portfolio-full .portfolio-desc {
+    padding: 15px
+}
+
+.postcontent .portfolio-desc h3 {
+    font-size: 17px
+}
+
+.postcontent .portfolio-desc span {
+    font-size: 12px
+}
+
+.postcontent .portfolio-notitle .portfolio-desc {
+    height: 70px;
+    bottom: -71px
+}
+
+.postcontent .portfolio-full.portfolio-notitle .portfolio-desc,.postcontent .portfolio-nomargin.portfolio-notitle .portfolio-desc {
+    bottom: -70px
+}
+
+.postcontent .portfolio-notitle .portfolio-item:hover .portfolio-overlay a {
+    margin-top: -50px!important
+}
+
+.bothsidebar .portfolio {
+    margin: 0
+}
+
+.bothsidebar .portfolio-item {
+    padding: 0
+}
+
+.bothsidebar .portfolio-desc {
+    display: none!important
+}
+.portfolio.portfolio-parallax .portfolio-overlay {
+    background-color: rgba(0,0,0,.4)
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    background-color: rgba(0,0,0,.5)
+}
+
+body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-overlay {
+    -webkit-transition: opacity .4s ease-in-out;
+    -o-transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out
+}
+
+.iportfolio:hover .portfolio-overlay,.portfolio-item:hover .portfolio-overlay {
+    opacity: 1
+}
+
+.portfolio-overlay a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #f5f5f5;
+    width: 40px!important;
+    height: 40px!important;
+    margin: -28px 0 0 -44px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #444;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden
+}
+
+body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-overlay a {
+    -webkit-transition: color .2s linear,background-color .2s linear,margin-top .2s linear,opacity .2s linear;
+    -o-transition: color .2s linear,background-color .2s linear,margin-top .2s linear,opacity .2s linear;
+    transition: color .2s linear,background-color .2s linear,margin-top .2s linear,opacity .2s linear
+}
+
+.portfolio-overlay a.right-icon {
+    left: auto;
+    right: 50%;
+    margin-left: 0;
+    margin-right: -44px
+}
+
+.portfolio-overlay a.center-icon {
+    display: block;
+    margin: -20px 0 0 -20px;
+    opacity: 0
+}
+
+.iportfolio:hover a.center-icon,.portfolio-item:hover a.center-icon {
+    opacity: 1
+}
+
+.portfolio-overlay a:hover {
+    color: #1abc9c;
+    background-color: #eee
+}
+
+.iportfolio:hover .portfolio-overlay a.left-icon,.iportfolio:hover .portfolio-overlay a.right-icon,.portfolio-item:hover .portfolio-overlay a.left-icon,.portfolio-item:hover .portfolio-overlay a.right-icon {
+    margin-top: -18px
+}
+
+.portfolio-overlay a i.icon-line-play {
+    position: relative;
+    left: 2px
+}
+
+.portfolio-overlay .portfolio-desc {
+    position: relative;
+    padding: 0!important;
+    margin: 0;
+    text-align: center
+}
+
+.portfolio-overlay .portfolio-desc a {
+    display: inline;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: inherit;
+    width: auto!important;
+    height: auto!important;
+    line-height: 1;
+    background-color: transparent!important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.15)
+}
+
+.portfolio-overlay .portfolio-desc h3 {
+    font-weight: 600;
+    color: #f5f5f5!important;
+    line-height: 1
+}
+
+.portfolio-overlay .portfolio-desc h3 a {
+    color: #f5f5f5!important
+}
+
+.portfolio-overlay .portfolio-desc span {
+    margin-top: 7px;
+    color: #ddd!important
+}
+
+.portfolio-overlay .portfolio-desc span a {
+    color: #ddd!important;
+    font-size: inherit
+}
+
+.portfolio-overlay .portfolio-desc~a {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0!important
+}
+
+body:not(.device-touch):not(.device-sm):not(.device-xs) .portfolio-overlay .portfolio-desc~a {
+    -webkit-transition: color .2s linear,background-color .2s linear,opacity .2s linear;
+    -o-transition: color .2s linear,background-color .2s linear,opacity .2s linear;
+    transition: color .2s linear,background-color .2s linear,opacity .2s linear
+}
+
+.portfolio-overlay .portfolio-desc~a.right-icon {
+    left: 0;
+    right: 0;
+    margin-left: 5px!important;
+    margin-right: 0!important
+}
+
+.portfolio-overlay .portfolio-desc a:hover {
+    background: 0 0
+}
+
+body.device-touch.device-sm .portfolio-notitle .portfolio-overlay,body.device-touch.device-xs .portfolio-notitle .portfolio-overlay {
+    display: none!important
+}
+
+.flexslider{
+    ol.flex-control-paging{
+        position: absolute;
+        height: 0;
+        top: 15px;
+        right: 15px;
+        z-index: 1302;
+        display: block;
+        li{
+            display: inline-block;
+            margin-left: 5px;
+            a{
+                text-indent: -9999px;
+                width: 10px;
+                height: 10px;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                &.flex-active{
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
