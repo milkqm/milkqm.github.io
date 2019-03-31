@@ -51,6 +51,7 @@
         right: -96px;
     }
     img {
+        max-height: 60px;
         @media (max-width: 1199px) and (min-width: 992px) {
             width: 38%;
         }
@@ -92,11 +93,20 @@
     }
 }
 
-.header-fixed {
+.sticky {
     position: fixed;
     left: 0;
     top: 0;
-    box-shadow: -21.213px 21.213px 30px 0px rgba(158, 158, 158, 0.3);
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    animation-name: menu-sliding;
+    animation-duration: .3s;
+}
+
+@keyframes menu-sliding {
+    0%   {top: -100px;}
+    100% {top: 0;}
 }
 
 @media (min-width: 992px) {

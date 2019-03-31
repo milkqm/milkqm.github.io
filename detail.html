@@ -4,46 +4,44 @@
 
     <body>
         <div partial-include="partials/_head_menu.html"></div>
-        <div partial-include="partials/_banner_slider.html"></div>
 
-        <!--================ Start Blog Post Area =================-->
         <section class="blog-post-area section-gap relative">
             <div class="container">
-                <div class="row section-bottom-border">
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8">
-                                <h3 class="text-heading">Highlights Videos</h3>
+                <div class="row">
+                    <div class="col-lg-8">
+
+                        <div partial-include="partials/_video.html"></div>
+
+                        <div class="row mb-30">
+                            <div class="col-lg-8 col-md-8 vm-table">
+                                <h5 class="vm-table-cell">Category</h5>
+                                <select>
+                                    <option value="1">Chu De 1</option>
+                                    <option value="1">Chu De 2</option>
+                                </select>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="heading-searchbar">
-                                    <form class="search-form" action="#">
-                                        <input placeholder="Search Videos" name="search" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'">
-                                        <button type="submit"><i class="fa fa-search"></i></button>
-                                    </form>
-                                </div>
+                            <div class="col-lg-4 col-md-4 vm-table">
+                                <h5 class="vm-table-cell right">Unit</h5>
+                                <select class="right">
+                                    <option value="1">Bai 1</option>
+                                    <option value="1">Bai 2</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-6 col-md-6">
                                 <div partial-include="partials/_box_item.html"></div>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div partial-include="partials/_box_item.html"></div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-6 col-md-6">
                                 <div partial-include="partials/_box_item.html"></div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-6 col-md-6">
                                 <div partial-include="partials/_box_item.html"></div>
                             </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div partial-include="partials/_box_item.html"></div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-6 col-md-6">
                                 <div partial-include="partials/_box_item.html"></div>
                             </div>
                         </div>
@@ -76,15 +74,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row section-top-border">
-                    <div class="col-lg-12">
-                        <h3 class="text-heading">Categories</h3>
-                    </div>
-                    <div class="col-lg-12">
-                        <div partial-include="partials/_categories.html"></div>
-                    </div>
+                    <div partial-include="partials/_widgets.html"></div>
                 </div>
             </div>
         </section>

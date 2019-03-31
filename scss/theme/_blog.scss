@@ -109,6 +109,15 @@
             text-transform: uppercase;
             color: #fff;
             position: relative;
+            //			&:before{
+            //				content: "";
+            //				height: 1px;
+            //				width: 100%;
+            //				background: #fff;
+            //				position: absolute;
+            //				bottom: 0px;
+            //				left: 0px;
+            //			}
         }
         p {
             font-weight: 300;
@@ -261,9 +270,9 @@
         margin-top: 80px;
     }
     .single-sidebar-widget {
-        padding: 50px 30px;
+        padding: 20px;
         background: #f9f9ff;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         @media (max-width: 991px) {
             margin-top: 30px;
         }
@@ -318,6 +327,7 @@
         form.search-form button {
             float: left;
             width: 20%;
+            height: 40px;
             padding: 7px;
             color: $primary-color;
             font-size: 17px;
@@ -430,15 +440,6 @@
             font-weight: 700;
             position: relative;
             display: inline-block;
-            &::after {
-                content: "";
-                position: absolute;
-                top: 13px;
-                right: -100%;
-                height: 2px;
-                width: 80px;
-                background: $title-color;
-            }
         }
         .cat-list {
             li {
@@ -525,6 +526,7 @@
             color: $primary-color;
             padding: 0px 15px;
             height: 50px;
+            // border: 1px solid $text-color;
             font-family: $primary-font;
             &:focus {
                 box-shadow: none;
