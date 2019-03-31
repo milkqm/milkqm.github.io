@@ -1,6 +1,5 @@
 .heading-searchbar{
     height: 40px;
-    background: $search-color;
     border-radius: 5px;
     margin-bottom: 30px;
 
@@ -8,29 +7,33 @@
         height: 40px;
         color: #13113a;
         padding: 11px 22px;
-        font-size: 14px;
+        font-size: 18px;
+        font-weight: bold;
         border: none;
         float: left;
-        width: 80%;
-        border: 1px solid $primary-color;
+        width: calc(100% - 50px);
+        border: 1px solid $white;
         border-right: 0;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        &::-webkit-input-placeholder {
+            font-size: 20px;
+            font-weight: bold;
+        }
     }
 
     form.search-form button{
         float: left;
-        width: 20%;
+        width: 50px;
         height: 40px;
-        color: $white;
+        color: #444;
         font-size: 17px;
         border: none;
         cursor: pointer;
-        background: $primary-color;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        opacity: .8;
-        border: 1px solid $primary-color;
+        background: $white;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: 1px solid $white;
     }
 }
 
@@ -59,12 +62,72 @@
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
     height: 0;
+    .text-heading{
+        margin-top: -24px;
+    }
 }
 .video-container iframe,
 .video-container object {
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+.highlight-video-area{
+    background: #232d36;
+    .text-heading{
+        color: $white;
+    }
+}
+.single-amenities{
+    margin-bottom: 0;
+    .amenities-details{
+        position: relative;
+        BACKGROUND: $primary-color;
+        padding: 5px;
+        h5{
+            margin: 0;
+            a{
+                font-size: 16px;
+                color: $white;
+            }
+        }
+        .right-arrow{
+            position: absolute;
+            right: 0;
+            top: 50%;
+            color: $white;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+.portfolio-item{
+    text-align: center;
+    color: #fff;
+    i{
+        font-size: 26px;
+    }
+    h4{
+        color: #fff;
+    }
+    .portfolio-ctn{
+        padding: 30px 20px;
+
+        &.blue{
+            background: $blue-color;
+        }
+        &.yellow{
+            background: $yellow-color;
+        }
+        &.red{
+            background: $red-color;
+        }
+        &.green{
+            background: $green-color;
+        }
+    }
 }

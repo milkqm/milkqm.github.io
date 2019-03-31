@@ -37,28 +37,28 @@ $(document).ready(function() {
         if ($(".home-banner-owl").length) {
             $(".home-banner-owl").owlCarousel({
                 loop: true,
-                margin: 10,
+                margin: 0,
                 items: 1,
                 nav: true,
                 autoplay: 2500,
                 smartSpeed: 1500,
                 dots: true,
                 responsiveClass: true,
-                stagePadding: 140,
+                stagePadding: 0,
                 navText: [
                     "<img src='img/prev.png' alt='' />",
                     "<img src='img/next.png' alt='' />"
                 ],
-                responsive: {
+                /*responsive: {
                     0: {
                         margin: 0,
                         stagePadding: 0
                     },
                     1299: {
-                        margin: 10,
-                        stagePadding: 140
+                        margin: 0,
+                        stagePadding: 0
                     }
-                }
+                }*/
             });
         }
     })();

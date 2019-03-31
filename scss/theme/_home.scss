@@ -6,7 +6,6 @@
         padding: 72px 0px 0px;
     }
     .container-fluid {
-        padding-left: 28%;
         position: relative;
         @media (max-width: 992px) {
             max-width: 960px;
@@ -33,6 +32,10 @@
         }
     }
     .owl-carousel {
+        height: 500px;
+        .owl-stage-outer{
+           height: 500px;
+        }
         .owl-nav {
             position: absolute;
             right: 22%;
@@ -41,7 +44,7 @@
                 display: none;
             }
             @media (max-width: 1665px) {
-                right: 18%;
+                right: 9%;
             }
             img {
                 @include filter(brightness(0%));
@@ -68,7 +71,7 @@
                 display: none;
             }
             @media (max-width: 1665px) {
-                right: 22%;
+                right: 13%;
             }
         }
         .owl-dot {
@@ -84,7 +87,6 @@
             }
         }
         .owl-stage {
-            left: -140px;
             @media (max-width: 1300px) {
                 left: 0px;
             }
@@ -118,12 +120,12 @@
     }
     .social-icons {
         position: absolute;
-        top: 56%;
+        top: 38%;
         left: 17%;
         margin-top: -20px;
         @include transform(rotate(-90deg));
         @media (max-width: 1680px) {
-            left: 180px;
+            left: 0;
         }
         @media (max-width: 1250px) {
             left: 90px;
@@ -260,15 +262,11 @@
 
 .single-amenities {
     background: $offwhite;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     @include transition();
     margin-bottom: 60px;
     .amenities-thumb {
         position: relative;
         overflow: hidden;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
         &:before {
             position: absolute;
             content: "";
@@ -312,20 +310,6 @@
         .category {
             a {
                 color: $text-color;
-            }
-        }
-    }
-    &:hover {
-        box-shadow: 0px 20px 30px rgba(0, 35, 71, 0.1);
-        background: #ffffff;
-        .amenities-thumb {
-            &:before {
-                left: -130%;
-            }
-        }
-        h5 {
-            a {
-                color: $primary-color;
             }
         }
     }
