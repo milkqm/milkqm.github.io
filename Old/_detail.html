@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+    <div partial-include="partials/_head.html"></div>
+
+    <body>
+
+        <section class="blog-post-area section-gap relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+
+                        <div partial-include="partials/_video.html"></div>
+
+                        <div class="row mb-30">
+                            <div class="col-lg-8 col-md-8 vm-table">
+                                <h5 class="vm-table-cell">Category</h5>
+                                <select>
+                                    <option value="1">Chu De 1</option>
+                                    <option value="1">Chu De 2</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 col-md-4 vm-table">
+                                <h5 class="vm-table-cell right">Unit</h5>
+                                <select class="right">
+                                    <option value="1">Bai 1</option>
+                                    <option value="1">Bai 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div partial-include="partials/_box_item.html"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div partial-include="partials/_box_item.html"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div partial-include="partials/_box_item.html"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div partial-include="partials/_box_item.html"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <nav class="blog-pagination justify-content-center d-flex">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a href="#" class="page-link" aria-label="Previous">
+                                                <span aria-hidden="true">
+                                                    <span class="ti-arrow-left"></span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a href="#" class="page-link">01</a></li>
+                                        <li class="page-item active"><a href="#" class="page-link">02</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">03</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">04</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">09</a></li>
+                                        <li class="page-item">
+                                            <a href="#" class="page-link" aria-label="Next">
+                                                <span aria-hidden="true">
+                                                    <span class="ti-arrow-right"></span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div partial-include="partials/_widgets.html"></div>
+                </div>
+            </div>
+        </section>
+        <!--================ End Blog Post Area =================-->
+
+        <div partial-include="partials/_footer.html"></div>
+
+        <!-- JS for include template partials in HTML -->
+        <script type="text/javascript" src="js/_partials_includer.js"></script>
+
+        <link href="partials/_js_assets.html" rel="import" />
+    </body>
+</html>
