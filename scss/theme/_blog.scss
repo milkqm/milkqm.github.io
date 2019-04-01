@@ -219,10 +219,18 @@
 .blog-pagination {
     padding-top: 10px;
     .page-link {
-        border-radius: 0;
+        border-radius: 50%;
     }
     .page-item {
         border: none;
+    }
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link{
+        border-radius: 50%;
+        &:hover{
+            background: transparent;
+            color: #818bb3;
+        }
     }
 }
 
@@ -235,7 +243,6 @@
     background-color: $primary-color;
     border-color: transparent;
     color: $white;
-    border-radius: 40px;
 }
 
 .blog-pagination .page-link {
@@ -262,7 +269,6 @@
     text-decoration: none;
     background-color: $primary-color;
     border-color: #eee;
-    border-radius: 40px;
 }
 
 .widget-wrap {

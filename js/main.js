@@ -2,14 +2,6 @@ $(document).ready(function() {
     "use strict";
 
     /*----------------------------------------------------*/
-    /*  Sticky header
-    /*----------------------------------------------------*/
-    $(window).on("scroll", function() {
-        var stickyHeader = $(window).scrollTop() > 105;
-        $(".header-area").toggleClass("sticky", stickyHeader);
-    });
-
-    /*----------------------------------------------------*/
     /*  Nice select
     /*----------------------------------------------------*/
     $("select").niceSelect();
