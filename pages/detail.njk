@@ -1,0 +1,118 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <section class="video-container pt-30 pb-30 relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 clearfix">
+                    {% include "partials/video.njk" %}
+
+                    <div class="row mt-50 mb-30">
+                        <div class="col-lg-8 col-md-8 vm-table">
+                            <h5 class="vm-table-cell">Chủ đề</h5>
+                            <select>
+                                <option value="1">Chủ Đề 1</option>
+                                <option value="2">Chủ Đề 2</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 col-md-4 vm-table">
+                            <h5 class="vm-table-cell right">Bài Số</h5>
+                            <select class="right">
+                                <option value="1">Bài 1</option>
+                                <option value="2">Bài 2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row video-categories">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_1.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_2.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_3.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_4.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row video-categories">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_1.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_2.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_3.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-fluid w-100" src="img/video/v_4.jpg" alt=""/>
+                                </div>
+                                <div class="amenities-details">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% include "partials/pagination.njk" %}
+                </div>
+
+                {% include "partials/widgets.njk" %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
