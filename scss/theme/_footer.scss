@@ -12,7 +12,13 @@
         @media (max-width: 767px) {
             margin-bottom: 15px;
         }
-        &:after{
+    }
+    .f-logo img{
+        margin-top: -30px;
+        height: 60px;
+    }
+    .footer-menu{
+        h6:after{
             content: "";
             position: absolute;
             top: 12px;
@@ -21,12 +27,6 @@
             width: 25px;
             background: $white;
         }
-    }
-    .f-logo img{
-        margin-top: -30px;
-        height: 60px;
-    }
-    .footer-menu{
         .f-menus a{
             display: block;
             width: 100%;
