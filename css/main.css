@@ -1880,10 +1880,19 @@ h6 {
         .home-banner-area .container-fluid:before {
           width: 100%; } }
   .home-banner-area .owl-carousel {
-    margin-top: -120px;
+    margin-top: -60px;
     height: calc(100vh/2); }
     .home-banner-area .owl-carousel .owl-stage-outer {
       height: calc(100vh/2); }
+    @media (max-width: 991px) {
+      .home-banner-area .owl-carousel {
+        height: 100%; }
+        .home-banner-area .owl-carousel .owl-stage-outer {
+          height: 100%; } }
+    .home-banner-area .owl-carousel .owl-stage, .home-banner-area .owl-carousel .owl-item, .home-banner-area .owl-carousel .banner-img {
+      height: 100%; }
+    .home-banner-area .owl-carousel .banner-img {
+      position: relative; }
     .home-banner-area .owl-carousel .owl-nav {
       position: absolute;
       right: 22%;
@@ -1937,15 +1946,22 @@ h6 {
       .home-banner-area .owl-carousel .owl-stage {
         left: 0px; } }
   .home-banner-area .text-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    max-width: 500px;
     color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    max-width: 700px;
-    padding: 40px 0px; }
+    padding: 20px;
+    background: #181B20;
+    opacity: .9;
+    color: #FFFFFF; }
     @media (max-width: 1300px) {
       .home-banner-area .text-wrapper {
-        margin-left: 0px; } }
+        margin-left: 0px;
+        display: none; } }
     @media (max-width: 991px) {
       .home-banner-area .text-wrapper {
         padding: 40px 20px; } }
@@ -1958,6 +1974,8 @@ h6 {
       @media (max-width: 991px) {
         .home-banner-area .text-wrapper h1 br {
           display: none; } }
+    .home-banner-area .text-wrapper h3, .home-banner-area .text-wrapper h5 {
+      color: #f9f9f9; }
   .home-banner-area .social-icons {
     position: absolute;
     top: 38%;
@@ -2965,8 +2983,10 @@ h6 {
 /* Footer Area css
 ============================================================================================ */
 .footer-area {
+  padding: 50px;
   background: #000000; }
   .footer-area h6 {
+    position: relative;
     color: #fff;
     margin-bottom: 25px;
     font-size: 18px;
@@ -2974,18 +2994,31 @@ h6 {
     @media (max-width: 767px) {
       .footer-area h6 {
         margin-bottom: 15px; } }
+    .footer-area h6:after {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 55px;
+      height: 2px;
+      width: 25px;
+      background: #fff; }
+  .footer-area .f-logo img {
+    margin-top: -30px;
+    height: 60px; }
+  .footer-area .footer-menu .f-menus a {
+    display: block;
+    width: 100%;
+    color: #555555; }
+  .footer-area .footer-menu .col-1 a {
+    font-weight: bold; }
+    .footer-area .footer-menu .col-1 a:hover {
+      color: #f9f9f9; }
+  .footer-area .footer-social a {
+    display: block;
+    color: #555555; }
 
-.copy-right-text i,
-.copy-right-text a {
+.copy-right-text i, .copy-right-text a {
   color: #1164AF; }
-
-.instafeed {
-  margin: -5px; }
-  .instafeed li {
-    overflow: hidden;
-    width: 25%; }
-    .instafeed li img {
-      margin: 5px; }
 
 .footer-social i {
   color: #555555;
@@ -3097,8 +3130,7 @@ h6 {
   @media (max-width: 991px) {
     .footer-text {
       padding-top: 0px; } }
-  .footer-text a,
-  .footer-text i {
+  .footer-text a, .footer-text i {
     color: #ffffff; }
 
 /* End Footer Area css
@@ -3541,31 +3573,5 @@ body.device-touch.device-sm .portfolio-notitle .portfolio-overlay, body.device-t
       background: #f27c6d; }
     .portfolio-item .portfolio-ctn.green {
       background: #4ebdbd; }
-
-.footer-area {
-  padding: 50px; }
-  .footer-area .f-logo img {
-    margin-top: -30px;
-    height: 60px; }
-  .footer-area .footer-menu h6 {
-    position: relative; }
-  .footer-area .footer-menu h6:after {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 55px;
-    height: 2px;
-    width: 25px;
-    background: #fff; }
-  .footer-area .footer-menu .f-menus a {
-    display: block;
-    width: 100%;
-    color: #555555; }
-  .footer-area .footer-menu .col-1 a {
-    font-weight: bold;
-    color: #fafafa; }
-  .footer-area .footer-social a {
-    display: block;
-    color: #555555; }
 
 /*# sourceMappingURL=main.css.map */
