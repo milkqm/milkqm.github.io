@@ -32,7 +32,6 @@
         }
     }
     .owl-carousel {
-        margin-top: -60px;
         height: calc(100vh/2);
         .owl-stage-outer{
            height: calc(100vh/2);
@@ -84,7 +83,7 @@
                 display: none;
             }
             @media (max-width: 1665px) {
-                right: 13%;
+                right: 12%;
             }
         }
         .owl-dot {

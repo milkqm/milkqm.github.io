@@ -1880,7 +1880,6 @@ h6 {
         .home-banner-area .container-fluid:before {
           width: 100%; } }
   .home-banner-area .owl-carousel {
-    margin-top: -60px;
     height: calc(100vh/2); }
     .home-banner-area .owl-carousel .owl-stage-outer {
       height: calc(100vh/2); }
@@ -1929,7 +1928,7 @@ h6 {
           display: none; } }
       @media (max-width: 1665px) {
         .home-banner-area .owl-carousel .owl-dots {
-          right: 13%; } }
+          right: 12%; } }
     .home-banner-area .owl-carousel .owl-dot {
       margin-right: 8px;
       opacity: 0.5;
