@@ -1880,6 +1880,7 @@ h6 {
         .home-banner-area .container-fluid:before {
           width: 100%; } }
   .home-banner-area .owl-carousel {
+    margin-top: -20px;
     height: calc(100vh/2); }
     .home-banner-area .owl-carousel .owl-stage-outer {
       height: calc(100vh/2); }
